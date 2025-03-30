@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Kontakt</h1>
+        <p>Schreib mir eine Nachricht!</p>
+
+        <div id="navbar-container"></div>
+
+        <div id="footer-container"></div>
+
+        <script>
+            // Navigation dynamisch laden
+            fetch('navbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar-container').innerHTML = data;
+                    setActiveLink(); // Markiere den aktiven Link nach dem Laden der Navigation
+                })
+                .catch(error => console.error('Error loading navbar:', error));
+
+            // Footer dynamisch laden
+            fetch('footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-container').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading footer:', error));
+        </script>
+
+        <script>
+            // Funktion zur Markierung des aktiven Links
+            function setActiveLink() {
+                // Hole den aktuellen Dateinamen
+                const currentPage = window.location.pathname.split('/').pop();
+
+                // Entferne die "active"-Klasse von allen Links
+                const links = document.querySelectorAll('nav a');
+                links.forEach(link => {
+                    link.classList.remove('active');
+                });
+
+                // Füge die "active"-Klasse zum aktiven Link hinzu
+                if (currentPage === 'index.html') {
+                    document.getElementById('home').classList.add('active');
+                } else if (currentPage === 'about.html') {
+                    document.getElementById('about').classList.add('active');
+                } else if (currentPage === 'contact.html') {
+                    document.getElementById('contact').classList.add('active');
+                }
+            }
+        </script>
+
+    </div>
+</body>
+<a href="impressum.html" id="impressum">Impressum</a>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Über uns</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Über uns</h1>
+        <p>In unserer Schule leben und lernen zur Zeit (Schuljahr 2020/21) ca. 300 Kinder in zwei Schulgebäuden miteinander. Sie besuchen jeweils eine der 12 Klassen.
+
+            19 Lehrerinnen und Lehrer, 3 Sonderpädagoginnen und Sonderpädagogen, eine Sozialpädagogische Fachkraft und ein Schulsozialarbeiter stehen zur Zeit bereit, sie auf ihrem Weg des Lernens unterstützend zu begleiten.
+            
+            Die Schule wird vor allem von Hermülheimer Kindern besucht. Darüber hinaus lernen bei uns auch Kinder aus Alt-Hürth, Altstädten-Burbach, Efferen, Fischenich, Gleuel, Kalscheuren, Kendenich und Stotzheim.
+            
+            Den Namen unserer Schule haben wir von der früheren Volksschule Hermülheim übernommen. Sie wurde am 14.09.1962 nach einem Beschluss des damaligen Gemeinderates "Deutschherrenschule" genannt. In dieser Namensgebung kommt eine enge Verbindung der Schule mit unserem Stadtteil zum Ausdruck. Die erste Silbe in "Hermülheim" gibt nämlich einen Hinweis auf die Deutschherren, also Mitglieder des Deutschen Ordens, die sich im Mittelalter im Gebiet des heutigen Stadtteils Hermülheim niederließen und über 500 Jahre die Geschichte des Ortes bestimmten.
+            
+            Der Deutsche Orden verband im Mittelalter ein caritatives Engagement mit dem Bestreben, die Ausbreitung des christlichen Glaubens zu fördern. Als katholische Bekenntnisschule stehen auch wir in einer christlichen Tradition. Wir bemühen uns darum, die Bildungs- und Erziehungsarbeit an unserer Schule im Sinne des katholischen Bekenntnisses zu gestalten. Das bedeutet, dass Erscheinungsformen und Lebensäußerungen dieses Glaubens in unserer Schule einen selbstverständlichen Platz haben (z.B. Kreuze in Klassenräumen, Gebete, katholischer Religionsunterricht, Schulgottesdienst, Adventsfeiern, St. Martin, etc.).
+            
+            Wir legen Wert darauf, dass der konfessionelle Charakter unserer Schule erkennbar bleibt.
+            
+            Gleichwohl haben wir kein Interesse daran, uns im Sinne konfessioneller Enge von Menschen anderer Glaubensüberzeugungen abzuschotten. Wir verstehen vielmehr das griechische Wort "katholisch" in seiner ursprünglichen Bedeutung ("über die ganze Erde") als einen Impuls, uns den Kindern zu öffnen, die - aus allen Teilen der Erde kommend - unsere Schule besuchen wollen.
+            
+            Die Vielfalt der Nationen (z.Z. 20) und Religionen (z.Z. 14 und auch Kinder ohne Bekenntnis) erleben wir als eine Bereicherung unseres Zusammenlebens und Lernens in der Schule. Darüber hinaus möchten wir einen nicht nur rhetorischen Beitrag zum friedlichen Miteinander von Menschen unterschiedlicher ethnischer und kultureller Herkunft in unserem Stadtteil leisten. Das im Logo der Stadt Hürth proklamierte Versprechen "Hürth - tolerant und weltoffen" erfüllen wir tagtäglich mit Leben.</p>
+        
+        <div id="navbar-container"></div>
+
+        <div id="footer-container"></div>
+
+        <script>
+            // Navigation dynamisch laden
+            fetch('navbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar-container').innerHTML = data;
+                    setActiveLink(); // Markiere den aktiven Link nach dem Laden der Navigation
+                })
+                .catch(error => console.error('Error loading navbar:', error));
+
+            // Footer dynamisch laden
+            fetch('footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-container').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading footer:', error));
+        </script>
+
+        <script>
+            // Funktion zur Markierung des aktiven Links
+            function setActiveLink() {
+                // Hole den aktuellen Dateinamen
+                const currentPage = window.location.pathname.split('/').pop();
+
+                // Entferne die "active"-Klasse von allen Links
+                const links = document.querySelectorAll('nav a');
+                links.forEach(link => {
+                    link.classList.remove('active');
+                });
+
+                // Füge die "active"-Klasse zum aktiven Link hinzu
+                if (currentPage === 'index.html') {
+                    document.getElementById('home').classList.add('active');
+                } else if (currentPage === 'about.html') {
+                    document.getElementById('about').classList.add('active');
+                } else if (currentPage === 'contact.html') {
+                    document.getElementById('contact').classList.add('active');
+                }
+            }
+        </script>
+
+    </div>
+</body>
+<a href="impressum.html" id="impressum">Impressum</a>
+</html>

@@ -1,0 +1,220 @@
+/* Allgemeine Stile */
+body {
+    font-family: 'Comic Sans MS', sans-serif; /* Kindgerechte Schriftart */
+    background-color: #FAE3D9; /* Warmes Pastell-Orange für eine freundliche Atmosphäre */
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    padding-top: 80px;  /* Platz für den fixierten Header */
+    padding-bottom: 120px; /* Platz für den fixierten Footer */
+}
+
+.image img {
+    width: 100%; /* Bild auf die volle Breite des Containers skalieren */
+    max-width: 750px; /* Bild wird nicht breiter als der Container */
+    max-height: 750px; /* Bild wird nicht höher als 500px */
+    height: auto; /* Höhe bleibt proportional zur Breite */
+}
+
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    background: #fff9c4; /* Lichtes Gelb */
+    padding: 20px;
+    padding-top: 80px; /* Abstand nach oben hinzufügen */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Kopfbereich */
+header {
+    background-color: #ffcc00; /* Fröhliches Gelb */
+    padding: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Navigation mit Flexbox - Fixiert oben */
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #FF8C42; /* Warmes Orange */
+    padding: 10px;
+    gap: 15px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    background-color: transparent; /* Entfernt den dunklen Hintergrund */
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    display: block;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    
+}
+
+/*Hoverfarbe der Links 1. Hirarchie*/
+/*nav ul li a:hover {
+    background-color: #555;
+}*/
+
+nav ul li ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    min-width: 200px;
+}
+
+nav ul li:hover ul {
+    display: block;
+}
+
+nav ul li ul li a {
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+/*Hoverfarbe der Links 2. Hirarchie*/
+/*nav ul li ul li a:hover {
+    background-color: #555;
+}*/
+
+/* Navigation Links */
+nav a {
+    text-decoration: none;
+    color: white;
+    background: #D9643A;
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-size: 18px;
+    
+}
+
+/* Hover-Effekt für Navigation */
+nav a:hover {
+    background: #ffcc00;
+    color: #333;
+}
+
+/* Aktiver Menüpunkt */
+nav a.active {
+    background-color: #ffcc00;
+    color: black;
+}
+
+
+/* Hauptbereich mit Grid */
+main {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Zwei Spalten: links 1 Teil, rechts 2 Teile */
+    gap: 20px;
+    padding: 20px;
+    max-width: 1000px;
+    margin: 80px auto 20px; /* Anpassung wegen fixer Navigation */
+}
+
+/* Linke Spalte (z. B. News) */
+.sidebar {
+    background: #FFD3B6; /* Sanftes Orange */
+    padding: 15px;
+    border-radius: 10px;
+}
+
+/* Rechte Spalte (Hauptinhalt) */
+.content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #FF8C42;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+
+#impressum {
+    position: fixed;    /* Fixiert den Link am Fenster */
+    bottom: 20px;       /* Abstand vom unteren Rand */
+    right: 20px;        /* Abstand vom rechten Rand */
+    font-size: 14px;    /* Schriftgröße */
+    background-color: #007BFF;  /* Hintergrundfarbe */
+    color: white;       /* Textfarbe */
+    padding: 10px 20px; /* Innenabstand */
+    border-radius: 5px; /* Abgerundete Ecken */
+    text-decoration: none; /* Entfernt die Unterstreichung des Links */
+}
+
+#impressum:hover {
+    background-color: #0056b3; /* Farbänderung bei Hover */
+}
+.impressum-content {
+    font-family: Arial, sans-serif;
+    margin-top: 20px;
+}
+
+.impressum-content h2 {
+    font-size: 1.8em;
+    color: #007BFF;
+    margin-bottom: 10px;
+}
+
+.impressum-content p {
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.impressum-content strong {
+    font-weight: bold;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.school-info h2 {
+    color: #D9643A;
+    font-size: 1.8em;
+    margin-top: 20px;
+}
+
+.school-info p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+
