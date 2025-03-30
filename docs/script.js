@@ -14,7 +14,7 @@ function setActiveLink() {
 }
 
 window.addEventListener("load", function () {
-    fetch('navbar.html')
+    fetch('Navbar.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('navbar-container').innerHTML = data;
