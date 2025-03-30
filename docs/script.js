@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+
 window.addEventListener("load", function () {
     fetch('navbar.html')
         .then(response => response.text())
