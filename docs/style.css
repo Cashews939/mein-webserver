@@ -70,11 +70,6 @@ nav ul li a {
     
 }
 
-/*Hoverfarbe der Links 1. Hirarchie*/
-/*nav ul li a:hover {
-    background-color: #555;
-}*/
-
 nav ul li ul {
     display: none;
     position: absolute;
@@ -95,11 +90,6 @@ nav ul li ul li a {
     color: white;
     text-decoration: none;
 }
-
-/*Hoverfarbe der Links 2. Hirarchie*/
-/*nav ul li ul li a:hover {
-    background-color: #555;
-}*/
 
 /* Navigation Links */
 nav a {
@@ -217,4 +207,41 @@ h1 {
     text-align: justify;
 }
 
+/* Navigation auf mobilen Geräten verstecken */
+@media screen and (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
 
+    nav {
+        display: none;
+        flex-direction: column;
+        background-color: #333;
+        position: absolute;
+        width: 100%;
+        top: 50px;
+        left: 0;
+    }
+
+    nav.show {
+        display: flex;
+    }
+
+    nav ul {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    nav li {
+        list-style: none;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        display: block;
+        padding: 10px;
+    }
+}

@@ -13,6 +13,10 @@ function setActiveLink() {
     }
 }
 
+function toggleMenu() {
+    document.getElementById("navbar").classList.toggle("show");
+}
+
 window.addEventListener("load", function () {
     fetch('navbar.html')
         .then(response => response.text())
