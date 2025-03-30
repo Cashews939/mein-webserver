@@ -14,8 +14,20 @@ function setActiveLink() {
 }
 
 function toggleMenu() {
-    document.getElementById("navbar").classList.toggle("show");
+    let navbar = document.getElementById("navbar");
+    navbar.classList.toggle("show");
+
+    // Debugging: Prüfe, ob das Menü sichtbar wird
+    console.log("Menu toggled:", navbar.classList.contains("show"));
 }
+
+// Stelle sicher, dass das Skript nach dem Laden der Seite korrekt funktioniert
+document.addEventListener("DOMContentLoaded", function () {
+    let menuIcon = document.querySelector(".menu-icon");
+    if (menuIcon) {
+        menuIcon.addEventListener("click", toggleMenu);
+    }
+});
 
 window.addEventListener("load", function () {
     fetch('navbar.html')
